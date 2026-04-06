@@ -1,6 +1,7 @@
 import { AnimatedSection, AnimatedText, GoldDivider } from "./AnimatedSection";
 import chefPlating from "@/assets/chef-plating.jpg";
-import restaurantInterior from "@/assets/restaurant-interior.jpg";
+import kitchen from "@/assets/kitchen.jpg";
+import restaurantPrivate from "@/assets/restaurant-private.jpg";
 
 const values = [
   { number: "01", title: "Producto", desc: "Ingredientes de proximidad y temporada seleccionados a diario" },
@@ -62,22 +63,28 @@ export const Experience = () => (
       ))}
     </div>
 
-    {/* Full-width image */}
-    <AnimatedSection className="mt-20 md:mt-32">
-      <div className="relative overflow-hidden">
-        <img
-          src={restaurantInterior}
-          alt="Interior ÀURA"
-          loading="lazy"
-          className="w-full aspect-[21/9] object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-transparent to-background/60" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <p className="font-display text-2xl md:text-4xl lg:text-5xl text-foreground tracking-wider text-center">
-            Una atmósfera <span className="text-gold-gradient italic">única</span>
-          </p>
+    {/* Kitchen & Private dining images */}
+    <div className="grid md:grid-cols-2 gap-4 mt-20 md:mt-32">
+      <AnimatedSection>
+        <div className="relative overflow-hidden">
+          <img src={kitchen} alt="Nuestra cocina" loading="lazy" className="w-full aspect-[16/10] object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
+          <div className="absolute bottom-6 left-6">
+            <p className="font-display text-xl md:text-2xl text-foreground">La Cocina</p>
+            <p className="font-body text-xs text-muted-foreground mt-1">Donde nace la magia</p>
+          </div>
         </div>
-      </div>
-    </AnimatedSection>
+      </AnimatedSection>
+      <AnimatedSection delay={0.15}>
+        <div className="relative overflow-hidden">
+          <img src={restaurantPrivate} alt="Salón privado" loading="lazy" className="w-full aspect-[16/10] object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent" />
+          <div className="absolute bottom-6 left-6">
+            <p className="font-display text-xl md:text-2xl text-foreground">Salón Privado</p>
+            <p className="font-body text-xs text-muted-foreground mt-1">Eventos exclusivos</p>
+          </div>
+        </div>
+      </AnimatedSection>
+    </div>
   </section>
 );

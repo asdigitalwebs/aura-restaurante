@@ -10,14 +10,22 @@ import dish5 from "@/assets/dish-5.jpg";
 import dish6 from "@/assets/dish-6.jpg";
 import chefPlating from "@/assets/chef-plating.jpg";
 import restaurantInterior from "@/assets/restaurant-interior.jpg";
+import kitchen from "@/assets/kitchen.jpg";
+import restaurantPrivate from "@/assets/restaurant-private.jpg";
+import dishTorrija from "@/assets/dish-torrija.jpg";
+import dishLamb from "@/assets/dish-lamb.jpg";
 
 const images = [
+  { src: restaurantInterior, alt: "Sala principal", span: "col-span-2 row-span-1" },
   { src: dish1, alt: "Tartar de Wagyu", span: "col-span-1 row-span-1" },
-  { src: restaurantInterior, alt: "Interior", span: "col-span-2 row-span-1" },
   { src: dish3, alt: "Tagliatelle al Tartufo", span: "col-span-1 row-span-1" },
-  { src: chefPlating, alt: "Chef emplatando", span: "col-span-1 row-span-1" },
+  { src: kitchen, alt: "Nuestra cocina", span: "col-span-1 row-span-1" },
   { src: dish5, alt: "Chuletón", span: "col-span-1 row-span-1" },
+  { src: restaurantPrivate, alt: "Salón privado", span: "col-span-2 row-span-1" },
+  { src: chefPlating, alt: "Chef emplatando", span: "col-span-1 row-span-1" },
+  { src: dishLamb, alt: "Rack de Cordero", span: "col-span-1 row-span-1" },
   { src: dish2, alt: "Sushi Omakase", span: "col-span-1 row-span-1" },
+  { src: dishTorrija, alt: "Torrija Caramelizada", span: "col-span-1 row-span-1" },
   { src: dish4, alt: "Coulant", span: "col-span-1 row-span-1" },
   { src: dish6, alt: "Old Fashioned", span: "col-span-1 row-span-1" },
 ];
@@ -37,7 +45,7 @@ export const Gallery = () => {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
         {images.map((img, i) => (
-          <AnimatedSection key={i} delay={i * 0.06} className={img.span}>
+          <AnimatedSection key={i} delay={i * 0.05} className={img.span}>
             <motion.div
               whileHover={{ scale: 1.02 }}
               className="relative group cursor-pointer overflow-hidden aspect-square"
@@ -59,7 +67,6 @@ export const Gallery = () => {
         ))}
       </div>
 
-      {/* Lightbox */}
       <AnimatePresence>
         {selected !== null && (
           <motion.div
