@@ -16,6 +16,19 @@ import dishTiramisu from "@/assets/dish-tiramisu.jpg";
 import dishGintonic from "@/assets/dish-gintonic.jpg";
 import dishWine from "@/assets/dish-wine.jpg";
 import dishRavioli from "@/assets/dish-ravioli.jpg";
+import dishTataki from "@/assets/dish-tataki.jpg";
+import dishPulpo from "@/assets/dish-pulpo.jpg";
+import dishPaella from "@/assets/dish-paella.jpg";
+import dishLubina from "@/assets/dish-lubina.jpg";
+import dishPannacotta from "@/assets/dish-pannacotta.jpg";
+import dishEspressoMartini from "@/assets/dish-espresso-martini.jpg";
+import dishNegroni from "@/assets/dish-negroni.jpg";
+import dishAgua from "@/assets/dish-agua.jpg";
+import dishLimonada from "@/assets/dish-limonada.jpg";
+import dishWhiteWine from "@/assets/dish-white-wine.jpg";
+import dishChampagne from "@/assets/dish-champagne.jpg";
+import dishGyozas from "@/assets/dish-gyozas.jpg";
+import dishEnsalada from "@/assets/dish-ensalada.jpg";
 
 export type DishTag = "picante" | "vegano" | "sin gluten" | "top ventas" | "nuevo" | "chef recomienda";
 
@@ -39,14 +52,17 @@ export interface MenuCategory {
 export const categories: MenuCategory[] = [
   { id: "entrantes", name: "Entrantes" },
   { id: "sushi", name: "Sushi & Crudo" },
+  { id: "pescados", name: "Pescados" },
   { id: "carnes", name: "Carnes" },
   { id: "pastas", name: "Pastas & Arroces" },
   { id: "postres", name: "Postres" },
-  { id: "bebidas", name: "Bebidas" },
+  { id: "refrescos", name: "Refrescos & Agua" },
+  { id: "vinos", name: "Vinos" },
+  { id: "cocteles", name: "Cócteles" },
 ];
 
 export const dishes: Dish[] = [
-  // --- ENTRANTES ---
+  // ─── ENTRANTES ───
   {
     id: "1",
     name: "Tartar de Wagyu",
@@ -80,10 +96,54 @@ export const dishes: Dish[] = [
     ingredients: ["Burrata DOP", "Tomates heritage", "Albahaca", "Módena 25 años"],
     allergens: ["Lácteos"],
   },
-
-  // --- SUSHI & CRUDO ---
   {
     id: "4",
+    name: "Tataki de Atún Rojo",
+    description: "Atún rojo de almadraba sellado con costra de sésamo, ponzu y wakame",
+    price: 26,
+    image: dishTataki,
+    category: "entrantes",
+    tags: ["sin gluten", "top ventas"],
+    ingredients: ["Atún rojo", "Sésamo", "Ponzu", "Wakame", "Jengibre"],
+    allergens: ["Pescado", "Sésamo", "Soja"],
+  },
+  {
+    id: "5",
+    name: "Pulpo a la Brasa",
+    description: "Tentáculo de pulpo gallego sobre parmentier de patata trufada y pimentón de la Vera",
+    price: 24,
+    image: dishPulpo,
+    category: "entrantes",
+    tags: ["sin gluten", "chef recomienda"],
+    ingredients: ["Pulpo gallego", "Patata", "Trufa", "Pimentón de la Vera"],
+    allergens: ["Moluscos"],
+  },
+  {
+    id: "6",
+    name: "Gyozas de Langostino",
+    description: "Empanadillas japonesas rellenas de langostino y jengibre con salsa ponzu yuzu",
+    price: 18,
+    image: dishGyozas,
+    category: "entrantes",
+    tags: ["nuevo"],
+    ingredients: ["Langostino", "Jengibre", "Cebolleta", "Salsa ponzu"],
+    allergens: ["Marisco", "Gluten", "Soja"],
+  },
+  {
+    id: "7",
+    name: "Ensalada César",
+    description: "Baby gem, pollo de corral, parmesano 24 meses, croutons de masa madre y anchoas del Cantábrico",
+    price: 17,
+    image: dishEnsalada,
+    category: "entrantes",
+    tags: [],
+    ingredients: ["Baby gem", "Pollo de corral", "Parmesano", "Anchoas", "Masa madre"],
+    allergens: ["Gluten", "Lácteos", "Huevo", "Pescado"],
+  },
+
+  // ─── SUSHI & CRUDO ───
+  {
+    id: "8",
     name: "Omakase Selection",
     description: "Selección del chef con 12 piezas de nigiri y maki premium del día",
     price: 42,
@@ -94,7 +154,7 @@ export const dishes: Dish[] = [
     allergens: ["Pescado", "Marisco"],
   },
   {
-    id: "5",
+    id: "9",
     name: "Sashimi de Salmón",
     description: "Salmón noruego premium cortado finamente con ponzu yuzu y ralladura de jengibre fresco",
     price: 24,
@@ -105,7 +165,7 @@ export const dishes: Dish[] = [
     allergens: ["Pescado", "Soja"],
   },
   {
-    id: "6",
+    id: "10",
     name: "Dragon Roll",
     description: "Roll de anguila glaseada con aguacate, tobiko y salsa unagi sobre arroz templado",
     price: 26,
@@ -116,9 +176,22 @@ export const dishes: Dish[] = [
     allergens: ["Pescado", "Soja", "Gluten"],
   },
 
-  // --- CARNES ---
+  // ─── PESCADOS ───
   {
-    id: "7",
+    id: "11",
+    name: "Lubina Salvaje",
+    description: "Lubina salvaje a la plancha con mantequilla de limón, espárragos trigueros y alcaparras",
+    price: 34,
+    image: dishLubina,
+    category: "pescados",
+    tags: ["sin gluten", "chef recomienda"],
+    ingredients: ["Lubina salvaje", "Limón", "Mantequilla", "Espárragos", "Alcaparras"],
+    allergens: ["Pescado", "Lácteos"],
+  },
+
+  // ─── CARNES ───
+  {
+    id: "12",
     name: "Chuletón de Vaca Vieja",
     description: "Vaca vieja madurada 60 días a la brasa con sal Maldon y romero fresco",
     price: 58,
@@ -129,7 +202,7 @@ export const dishes: Dish[] = [
     allergens: [],
   },
   {
-    id: "8",
+    id: "13",
     name: "Rack de Cordero",
     description: "Costillar de cordero lechal con costra de hierbas finas, jus de romero y verduras asadas",
     price: 38,
@@ -140,7 +213,7 @@ export const dishes: Dish[] = [
     allergens: [],
   },
   {
-    id: "9",
+    id: "14",
     name: "Magret de Pato",
     description: "Pechuga de pato rosada con reducción de cerezas, puré de chirivía y brotes tiernos",
     price: 34,
@@ -151,9 +224,9 @@ export const dishes: Dish[] = [
     allergens: [],
   },
 
-  // --- PASTAS & ARROCES ---
+  // ─── PASTAS & ARROCES ───
   {
-    id: "10",
+    id: "15",
     name: "Tagliatelle al Tartufo",
     description: "Pasta fresca artesanal con mantequilla de trufa blanca d'Alba y parmigiano 36 meses",
     price: 32,
@@ -164,7 +237,7 @@ export const dishes: Dish[] = [
     allergens: ["Gluten", "Lácteos"],
   },
   {
-    id: "11",
+    id: "16",
     name: "Ravioli de Bogavante",
     description: "Ravioli relleno de bogavante gallego con bisque de marisco y microgreens",
     price: 36,
@@ -175,7 +248,7 @@ export const dishes: Dish[] = [
     allergens: ["Gluten", "Marisco", "Huevo"],
   },
   {
-    id: "12",
+    id: "17",
     name: "Risotto ai Funghi",
     description: "Arroz carnaroli cremoso con boletus edulis, aceite de trufa y lascas de parmesano",
     price: 28,
@@ -185,10 +258,21 @@ export const dishes: Dish[] = [
     ingredients: ["Arroz carnaroli", "Boletus edulis", "Aceite de trufa", "Parmesano"],
     allergens: ["Lácteos"],
   },
-
-  // --- POSTRES ---
   {
-    id: "13",
+    id: "18",
+    name: "Paella de Marisco",
+    description: "Arroz bomba con caldo de roca, gambas rojas, mejillones, calamares y azafrán de la Mancha",
+    price: 32,
+    image: dishPaella,
+    category: "pastas",
+    tags: ["sin gluten", "top ventas"],
+    ingredients: ["Arroz bomba", "Gambas rojas", "Mejillones", "Calamares", "Azafrán"],
+    allergens: ["Marisco"],
+  },
+
+  // ─── POSTRES ───
+  {
+    id: "19",
     name: "Coulant de Chocolate",
     description: "Fondant de chocolate Valrhona 70% con hoja de oro y helado de vainilla de Madagascar",
     price: 18,
@@ -199,9 +283,9 @@ export const dishes: Dish[] = [
     allergens: ["Gluten", "Lácteos", "Huevo"],
   },
   {
-    id: "14",
+    id: "20",
     name: "Torrija Caramelizada",
-    description: "Torrija de brioche artesano empapada en leche infusionada con canela, caramelizada y servida con helado de vainilla bourbon",
+    description: "Torrija de brioche artesano empapada en leche con canela de Ceilán, caramelizada al soplete con helado de vainilla bourbon y miel de azahar",
     price: 16,
     image: dishTorrija,
     category: "postres",
@@ -210,7 +294,7 @@ export const dishes: Dish[] = [
     allergens: ["Gluten", "Lácteos", "Huevo"],
   },
   {
-    id: "15",
+    id: "21",
     name: "Tiramisú Clásico",
     description: "Capas de mascarpone cremoso, bizcocho empapado en espresso y cacao amargo Valrhona",
     price: 15,
@@ -220,39 +304,131 @@ export const dishes: Dish[] = [
     ingredients: ["Mascarpone", "Espresso", "Bizcocho", "Cacao Valrhona", "Marsala"],
     allergens: ["Gluten", "Lácteos", "Huevo"],
   },
-
-  // --- BEBIDAS ---
   {
-    id: "16",
+    id: "22",
+    name: "Panna Cotta di Lamponi",
+    description: "Panna cotta de vainilla de Tahití con coulis de frambuesas frescas y menta",
+    price: 14,
+    image: dishPannacotta,
+    category: "postres",
+    tags: ["sin gluten"],
+    ingredients: ["Nata", "Vainilla de Tahití", "Frambuesas", "Menta"],
+    allergens: ["Lácteos"],
+  },
+
+  // ─── REFRESCOS & AGUA ───
+  {
+    id: "23",
+    name: "Agua Mineral Premium",
+    description: "Agua mineral natural o con gas. Botella de cristal 75cl",
+    price: 5,
+    image: dishAgua,
+    category: "refrescos",
+    tags: [],
+    ingredients: ["Agua mineral natural"],
+    allergens: [],
+  },
+  {
+    id: "24",
+    name: "Limonada Artesanal",
+    description: "Limonada casera con hierbas frescas del huerto, frutos del bosque y un toque de jengibre",
+    price: 8,
+    image: dishLimonada,
+    category: "refrescos",
+    tags: ["nuevo", "vegano"],
+    ingredients: ["Limón", "Hierbas frescas", "Frutos del bosque", "Jengibre", "Agave"],
+    allergens: [],
+  },
+  {
+    id: "25",
+    name: "Refresco Premium",
+    description: "Selección de refrescos artesanales: cola, naranja, tónica o ginger ale",
+    price: 4,
+    image: dishAgua,
+    category: "refrescos",
+    tags: [],
+    ingredients: ["Refresco artesanal"],
+    allergens: [],
+  },
+
+  // ─── VINOS ───
+  {
+    id: "26",
+    name: "Tinto Reserva",
+    description: "Copa de vino tinto reserva, selección del sommelier. Tempranillo crianza 18 meses en barrica de roble francés",
+    price: 12,
+    image: dishWine,
+    category: "vinos",
+    tags: ["top ventas"],
+    ingredients: ["Tempranillo", "Roble francés", "Crianza 18 meses"],
+    allergens: ["Sulfitos"],
+  },
+  {
+    id: "27",
+    name: "Blanco Verdejo",
+    description: "Copa de verdejo D.O. Rueda, fresco y aromático con notas de fruta tropical y hierbas",
+    price: 10,
+    image: dishWhiteWine,
+    category: "vinos",
+    tags: [],
+    ingredients: ["Verdejo", "D.O. Rueda"],
+    allergens: ["Sulfitos"],
+  },
+  {
+    id: "28",
+    name: "Champagne Brut",
+    description: "Copa de champagne francés brut, burbujas finas y persistentes con notas de brioche y cítricos",
+    price: 18,
+    image: dishChampagne,
+    category: "vinos",
+    tags: ["chef recomienda"],
+    ingredients: ["Chardonnay", "Pinot Noir", "Método tradicional"],
+    allergens: ["Sulfitos"],
+  },
+
+  // ─── CÓCTELES ───
+  {
+    id: "29",
     name: "Old Fashioned Ahumado",
     description: "Bourbon premium con bitter de naranja, sirope de arce ahumado y twist de naranja caramelizada",
     price: 16,
     image: dish6,
-    category: "bebidas",
+    category: "cocteles",
     tags: ["top ventas"],
     ingredients: ["Bourbon", "Bitter de naranja", "Sirope de arce", "Naranja"],
     allergens: [],
   },
   {
-    id: "17",
+    id: "30",
     name: "Gin Tonic Botánico",
     description: "Gin premium con tónica artesanal, enebro, romero fresco y pimienta negra Tellicherry",
     price: 14,
     image: dishGintonic,
-    category: "bebidas",
+    category: "cocteles",
     tags: ["nuevo"],
     ingredients: ["Gin premium", "Tónica artesanal", "Enebro", "Romero", "Pimienta negra"],
     allergens: [],
   },
   {
-    id: "18",
-    name: "Selección de Vinos",
-    description: "Copa de vino tinto reserva, selección del sommelier. Crianza en barrica de roble francés",
-    price: 12,
-    image: dishWine,
-    category: "bebidas",
+    id: "31",
+    name: "Espresso Martini",
+    description: "Vodka premium, licor de café, espresso recién extraído y crema de café con granos tostados",
+    price: 15,
+    image: dishEspressoMartini,
+    category: "cocteles",
+    tags: ["top ventas"],
+    ingredients: ["Vodka", "Licor de café", "Espresso", "Crema de café"],
+    allergens: [],
+  },
+  {
+    id: "32",
+    name: "Negroni Clásico",
+    description: "Gin London Dry, Campari y vermut rojo italiano con twist de naranja fresca",
+    price: 14,
+    image: dishNegroni,
+    category: "cocteles",
     tags: [],
-    ingredients: ["Tempranillo", "Roble francés", "Crianza 18 meses"],
-    allergens: ["Sulfitos"],
+    ingredients: ["Gin London Dry", "Campari", "Vermut rojo", "Naranja"],
+    allergens: [],
   },
 ];
