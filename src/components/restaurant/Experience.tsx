@@ -1,6 +1,7 @@
 import { AnimatedSection, AnimatedText, GoldDivider } from "./AnimatedSection";
 import chefPlating from "@/assets/chef-plating.jpg";
-import restaurantInterior from "@/assets/restaurant-interior.jpg";
+import kitchen from "@/assets/kitchen.jpg";
+import restaurantPrivate from "@/assets/restaurant-private.jpg";
 
 const values = [
   { number: "01", title: "Producto", desc: "Ingredientes de proximidad y temporada seleccionados a diario" },
