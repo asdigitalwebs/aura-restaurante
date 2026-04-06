@@ -101,7 +101,7 @@ const DishCard = ({ dish, isActive }: { dish: Dish; isActive: boolean }) => {
         {/* Category pill */}
         <div className="pt-2">
           <span className="font-body text-[10px] tracking-widest uppercase text-muted-foreground">
-            {categories.find((c) => c.id === dish.category)?.icon}{" "}
+            {categories.find((c) => c.id === dish.category)?.name}
             {categories.find((c) => c.id === dish.category)?.name}
           </span>
         </div>
@@ -162,7 +162,7 @@ const MenuQR = () => {
                 activeCategory === cat.id ? "border-primary bg-primary/10 text-primary" : "border-border/30 text-muted-foreground"
               }`}
             >
-              {cat.icon} {cat.name}
+              {cat.name}
             </button>
           ))}
         </div>
