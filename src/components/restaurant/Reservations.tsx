@@ -68,7 +68,7 @@ export const Reservations = () => {
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               className={inputClass}
             />
-            <div className="grid grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="relative">
                 <CalendarDays size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
                 <input
