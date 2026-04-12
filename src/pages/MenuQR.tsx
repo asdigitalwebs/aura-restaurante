@@ -102,7 +102,6 @@ const DishCard = ({ dish, isActive }: { dish: Dish; isActive: boolean }) => {
         <div className="pt-2">
           <span className="font-body text-[10px] tracking-widest uppercase text-muted-foreground">
             {categories.find((c) => c.id === dish.category)?.name}
-            {categories.find((c) => c.id === dish.category)?.name}
           </span>
         </div>
       </div>
